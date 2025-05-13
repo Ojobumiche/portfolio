@@ -1,5 +1,21 @@
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("recommend_btn").addEventListener("click", addRecommendation);
+
+  // Scroll event for animating skills
+  document.addEventListener("scroll", () => {
+    const skills = document.querySelectorAll(".skill");
+    skills.forEach(skill => {
+      if (isElementInViewport(skill)) {
+        skill.classList.add("animated");
+      }
+    });
+  });
+});
+
 function addRecommendation() {
-  const newRecommendation = document.getElementById("new_recommendation").value;
+  const newRecommendation = document.getElementById("new_recommendation").value.trim();
+  if (!newRecommendation) return;
+
   const recommendationsContainer = document.getElementById("all_recommendations");
 
   const newRecDiv = document.createElement("div");
@@ -8,10 +24,7 @@ function addRecommendation() {
 
   recommendationsContainer.appendChild(newRecDiv);
 
-  // Clear the textarea
   document.getElementById("new_recommendation").value = "";
-
-  // Show popup
   showPopup(true);
 }
 
@@ -19,16 +32,6 @@ function showPopup(show) {
   const popup = document.getElementById("popup");
   popup.style.display = show ? "block" : "none";
 }
-
-// Add event listener for scrolling to animate skill images
-document.addEventListener("scroll", function () {
-  const skills = document.querySelectorAll(".skill");
-  skills.forEach((skill) => {
-    if (isElementInViewport(skill)) {
-      skill.classList.add("animated");
-    }
-  });
-});
 
 function isElementInViewport(el) {
   const rect = el.getBoundingClientRect();
@@ -39,3 +42,19 @@ function isElementInViewport(el) {
     rect.right <= (window.innerWidth || document.documentElement.clientWidth)
   );
 }
+
+document.getElementById("cta-form").addEventListener("submit", function (e) {
+  e.preventDefault();
+  const email = document.getElementById("client_email").value.trim();
+
+  if (email) {
+    document.getElementById("cta-message").textContent =
+      "Thanks! We’ll be in touch soon.";
+    document.getElementById("client_email").value = "";
+
+    // Here you could also add logic to send the email to your backend or a service like Formspree
+  } else {
+    document.getElementById("cta-message").textContent =
+      "Please enter a valid email address.";
+  }
+});

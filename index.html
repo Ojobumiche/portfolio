@@ -1,266 +1,166 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Joshua Monday - Portfolio</title>
-    <link rel="stylesheet" href="./assets/css/style.css"/>
-    <script src="./assets/js/script.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joshua Monday - Full Stack Developer</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script src="./assets/js/script.js" defer></script>
   </head>
   <body>
-    <!-- Navigation Bar -->
-    <nav>
-      <div id="home">
+    <!-- Header / Navigation -->
+    <header id="home">
+      <div class="container">
         <div class="profile_name">
-          Joshua Monday
+          <h1>Joshua Monday</h1>
           <div class="contact_info">
-            <img src="image/logo3.png" width="100" height="100" alt="logo" />
-            bumiche@gmail.com
+            <img src="image/logo3.png" alt="logo" width="50" height="50" />
+            <span>bumiche@gmail.com</span>
           </div>
-          <div style="clear: both"></div>
           <div class="contact_info">
-            <img
-              src="image/phone.png"
-              alt="https://icons8.com/icon/124377/circled-envelope"
-            />
-            +2349097228224
+            <img src="image/phone.png" alt="phone" />
+            <span>+2349097228224</span>
           </div>
         </div>
-        <div class="topdiv">
+        <nav class="topdiv">
           <a class="topmenu" href="#home">Home</a>
           <a class="topmenu" href="#about-me">About Me</a>
           <a class="topmenu" href="#skills">Skills</a>
           <a class="topmenu" href="#projects">Projects</a>
           <a class="topmenu" href="#recommendations">Recommendations</a>
-        </div>
+        </nav>
       </div>
-    </nav>
-    <section id="home" class="container">
-      <div class="animated-image">
-        <img src="./image/developer2.jpg" width="300" height="300" alt="css" class="profile_image"/>
-        <h1> Hi I'm Joshua Monday</h1>
-      </div>
-      <br/>
-    </section>
+    </header>
 
-    <!-- About Me -->
-    <section id="about-me" class="container">
+    <!-- Hero Section -->
+    <section class="container">
       <div class="animated-image">
         <img
-          src="./image/Developer.jpg.jpg"
-          width="300"
-          height="300"
-          alt="developer"
+          src="./image/developer2.jpg"
+          alt="Developer Profile"
           class="profile_image"
         />
+        <h1>Hi, I'm Joshua Monday</h1>
+        <p>A passionate Full Stack Developer building modern applications</p>
       </div>
+    </section>
 
+    <!-- About Me Section -->
+    <section id="about-me" class="container">
+      <div class="animated-image">
+        <img src="./image/Developer.jpg.jpg" alt="Developer" class="profile_image" />
+      </div>
       <div>
         <h1>
-          Hi, I'm Joshua Monday!
-          <img src="image/waving-hand.png" width="60px" />
+          About Me <img src="image/waving-hand.png" alt="Hello" width="40" />
         </h1>
         <p>
-          I am a full stack developer with 2 years of experience in both
-          application and presentation layers. I have worked on applications and
-          microservices deployed on IBM Cloud. I am an avid user of IBM Watson
-          Services and have worked on Watson Assistant, NLU, Sentiment analyzer
-          to name a few.<br />I'm always eager to learn new things and take on
-          new challenges.<br />
-          Let's build something amazing together
+          I'm a Full Stack Developer with 2 years of experience in building web applications and microservices. I've worked with IBM Cloud, Watson AI services including Assistant, NLU, and Sentiment Analyzer. I'm always seeking to learn and push boundaries.
         </p>
       </div>
     </section>
 
-    <!-- Skills -->
+    <!-- Skills Section -->
     <section id="skills">
       <h2>Skills</h2>
-      <p>Here are the skills I have</p>
-      <div style="clear: both"></div>
-
+      <p>Here are the technologies I work with:</p>
       <div class="all_skills">
-        <div class="skill">
-        
-          <img src="image/html5.png" />
-          <h6>HTML</h6>
-          <p>3 years experience</p>
-        </div>
-
-        <div class="skill">
-          <img src="image/js.jpeg" />
-          <h6>JavaScript</h6>
-          <p>3 years experience</p>
-        </div>
-        <div class="skill">
-          <img src="image/node.png" />
-          <h6>Node.js</h6>
-          <p>2 years experience</p>
-        </div>
-        <div class="skill">
-          <img src="image/python.png" alt="python" />
-          <h6>python</h6>
-          <p>2years experience</p>
-        </div>
-        <div class="skill">
-          <img src="image/CSS3.png" alt="css" />
-          <h6>CSS</h6>
-          <p>3 years experience</p>
-        </div>
-        <div class="skill">
-          <img src="image/react.png" alt="react" />
-          <h6>React</h6>
-          <p>2 years experience</p>
-        </div>
+        <div class="skill"><img src="image/html5.png" /><h6>HTML</h6><p>3 years</p></div>
+        <div class="skill"><img src="image/js.jpeg" /><h6>JavaScript</h6><p>3 years</p></div>
+        <div class="skill"><img src="image/node.png" /><h6>Node.js</h6><p>2 years</p></div>
+        <div class="skill"><img src="image/python.png" /><h6>Python</h6><p>2 years</p></div>
+        <div class="skill"><img src="image/CSS3.png" /><h6>CSS</h6><p>3 years</p></div>
+        <div class="skill"><img src="image/react.png" /><h6>React</h6><p>2 years</p></div>
       </div>
     </section>
 
-    <!-- Projects -->
-    <section class="projects" id="projects">
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
       <h2>Projects</h2>
-      <div style="clear: both"></div>
-
-      <div id="projects-container" class="projects-container">
+      <div class="projects-container">
         <div class="project-card">
           <h3>Unit Converter</h3>
-          <img
-            src="image/device2.png"
-            width="300"
-            height="300"
-            alt="device"
-            class="project-image"
-          />
-          <h4><a href="https://github.com/Ojobumiche/project.git">view my project here</h4></a>
-          <ul>
-            <li>
-              This project is developed in a simple web page.<br />
-              It is an application that converts metric units to imperial units
-              <br />
-              using HTML, CSS, JavaScript .
-            </li>
-          </ul>
+          <img src="image/device2.png" alt="Unit Converter" class="project-image" />
+          <a href="https://github.com/Ojobumiche/project.git" target="_blank">View Project</a>
+          <p>A web app to convert metric units to imperial units using HTML, CSS, JS.</p>
         </div>
-        <!-- <hr /> -->
+
         <div class="project-card">
-          <h3>Chatbot</h3>
-          <img
-            src="image/chatbot.png"
-            width="250"
-            height="250"
-            alt="chatbot"
-            class="project-image"
-          />
-          <ul>
-            <li>
-             This project is used to  developed a secure website integrated with chatbot<br />
-              for an e-commerce client using HTML, CSS, JavaScript and IBM Watson assistance
-            </li>
-          </ul>
+          <h3>Chatbot Integration</h3>
+          <img src="image/chatbot.png" alt="Chatbot" class="project-image" />
+          <p>Built a chatbot-enabled website using Watson Assistant for an e-commerce platform.</p>
         </div>
+
         <div class="project-card">
           <h3>Sentiment Analyzer</h3>
-          <img src="image/analysis.png" width="300" height="300" alt="analysis" class="project-image" />
-          <ul>
-            <li>
-              It is developed and deployed a sentiment analyzer for the box reviews
-              section of an e-commerce website  using IBM NLU
-            </li>
-          </ul>
+          <img src="image/analysis.png" alt="Sentiment Analysis" class="project-image" />
+          <p>Deployed a sentiment analyzer for customer reviews using IBM NLU APIs.</p>
         </div>
-        <!-- <hr /> -->
+
         <div class="project-card">
           <h3>Fashion Website</h3>
-          <img src="image/fasion.png" width="300" height="300" alt="fashion" class="project-image" />
-          <ul>
-            <li>
-              Created a styled multi-page website for a new player in the
-              fashion industry and integrated it with a shopping cart, using
-              stripe for payment gateway
-            </li>
-          </ul>
+          <img src="image/fasion.png" alt="Fashion Website" class="project-image" />
+          <p>Developed a stylish shopping site with Stripe integration for secure payments.</p>
         </div>
       </div>
-      <!-- <hr /> -->
     </section>
-    <div style="clear: both"></div>
+
     <!-- Recommendations -->
     <section id="recommendations">
-      <h2 >Recommendations</h2>
-      <div style="clear: both"></div>
-      <div class="all_recommendations" id="all_recommendations">
+      <h2>Recommendations</h2>
+      <div class="all_recommendations">
         <div class="recommendation">
-          <span>&#8220;</span>
-          <h5>Hi I'm Janet Akoh</h5>
-         <p> Joshua Monday is a very quick learner and quickly grasps key concepts of Web
-          development. <br/>He got a great attitude & He is an excellent team
-          player. He has a curious mind and asks the right question.<br/> He takes
-          initiative within a team and has potentials to lead the team.
-          </p>
-
-          <span>&#8221;</span>
+          <h5>Janet Akoh</h5>
+          <p>Joshua is a quick learner and a collaborative team player with leadership potential.</p>
         </div>
         <div class="recommendation">
-          <span>&#8220;</span>
-          <img src="image/typist (2).jpg" width="150" height="150" alt="typist" />
-          <h5>Hi I'm Mary John</h5>
-          <p> Working with Joshua Monday has been an awesome experience.<br/> He is highly
-            knowledgeable and always goes the extra step to make sure everything is
-            right. <br/>For any future projects that need his expertise I would
-            definitely want to work with Him again.</p>
-          <span>&#8221;</span>
+          <h5>Mary John</h5>
+          <p>Working with Joshua was a pleasure. He's knowledgeable and detail-oriented.</p>
         </div>
         <div class="recommendation">
-          <span>&#8220;</span>
-          <img
-            src="image/Isaac.jpg"
-            width="150"
-            height="150"
-            alt="Isaac"
-          />
-          <h5>Hi I'm Isaac James</h5>
-          I had worked along with Joshua Monday during the initial phase of our
-          venture which needed Web development.<br/> He is a committed resource who
-          has in depth knowledge about the domain. <br/>He will be an asset for any
-          organization!
-          <span>&#8221;</span>
+          <h5>Isaac James</h5>
+          <p>Joshua has in-depth knowledge and commitment—he's an asset to any team.</p>
         </div>
       </div>
     </section>
 
-    <br />
-
-    <!-- Recommendation Form -->
+    <!-- Contact Form -->
     <section id="contact">
       <div class="flex_center">
         <fieldset>
           <legend class="introduction">Leave a Recommendation</legend>
-          <input type="text" placeholder="Name (Optional)" /> <br />
-          <textarea
-            id="new_recommendation"
-            cols="500"
-            rows="10"
-            placeholder="Message"
-          ></textarea>
-          <div class="flex_center">
-            <button id="recommend_btn" onclick="addRecommendation()">
-              Submit
-            </button>
-          </div>
+          <input type="text" placeholder="Name (Optional)" />
+          <textarea id="new_recommendation" placeholder="Message"></textarea>
+          <button id="recommend_btn" onclick="addRecommendation()">Submit</button>
         </fieldset>
       </div>
     </section>
 
-    <div class="iconbutton">
-      <a href="#home">
-          <img src="image/logo3.png" alt="Home" style="width:50px; height:50px;">
-      </a>
+    <!-- Popup Confirmation -->
+    <div class="popup" id="popup">
+      <img src="image/checkmark--outline.svg" alt="Success" />
+      <h3>Thank you for your recommendation!</h3>
+      <button onclick="showPopup(false)">OK</button>
     </div>
 
-    <div class="popup" id="popup" class="flex_center">
-      <img src="image/checkmark--outline.svg" />
-      <h3>Hi I'm Joshua Monday, a full stack developer<br/>
-        Thank you for submitting the recommendation.
-      </h3>
-      <button onclick="showPopup(false)">Ok</button>
-    </div>
+          <!-- Call to Action Section -->
+<section id="cta" class="cta-section">
+  <h2>Let's Work Together</h2>
+  <p>Interested in building something amazing? Drop your email and let’s talk!</p>
+  <form id="cta-form">
+    <input type="email" id="client_email" placeholder="Your Email Address" required />
+    <button type="submit">Get in Touch</button>
+  </form>
+  <p id="cta-message" class="cta-message"></p>
+</section>
+
+    <!-- Footer -->
     <footer>
+      <div class="iconbutton">
+        <a href="#home">
+          <img src="image/logo3.png" alt="Home" style="width: 50px; height: 50px" />
+        </a>
+      </div>
       <p class="copyright">&copy; 2024 Joshua Monday. All rights reserved.</p>
     </footer>
   </body>
