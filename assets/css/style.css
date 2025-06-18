@@ -250,6 +250,13 @@ footer p {
   color: white;
   margin: 0;
 }
+a{
+  text-decoration: none;
+  color: white;
+  padding: 0 15px;
+}
+
+
 
 /* Animations */
 @keyframes slideInFromLeft {

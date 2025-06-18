@@ -1,15 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Add recommendation event
   document.getElementById("recommend_btn").addEventListener("click", addRecommendation);
 
-  // Scroll event for animating skills
+  // Animate skills on scroll
   document.addEventListener("scroll", () => {
     const skills = document.querySelectorAll(".skill");
-    skills.forEach(skill => {
+    skills.forEach((skill) => {
       if (isElementInViewport(skill)) {
         skill.classList.add("animated");
       }
     });
   });
+
+  // Call To Action email form handler
+  const ctaForm = document.getElementById("cta-form");
+  if (ctaForm) {
+    ctaForm.addEventListener("submit", handleFormSubmit);
+  }
 });
 
 function addRecommendation() {
@@ -23,14 +30,16 @@ function addRecommendation() {
   newRecDiv.innerHTML = `<span>&#8220;</span>${newRecommendation}<span>&#8221;</span>`;
 
   recommendationsContainer.appendChild(newRecDiv);
-
   document.getElementById("new_recommendation").value = "";
+
   showPopup(true);
 }
 
 function showPopup(show) {
   const popup = document.getElementById("popup");
-  popup.style.display = show ? "block" : "none";
+  if (popup) {
+    popup.style.display = show ? "block" : "none";
+  }
 }
 
 function isElementInViewport(el) {
@@ -43,18 +52,28 @@ function isElementInViewport(el) {
   );
 }
 
-document.getElementById("cta-form").addEventListener("submit", function (e) {
-  e.preventDefault();
-  const email = document.getElementById("client_email").value.trim();
+function handleFormSubmit(event) {
+  event.preventDefault();
+  const form = event.target;
+  const emailInput = form.querySelector("input[type='email']");
+  const messageContainer = document.getElementById("cta-message");
 
-  if (email) {
-    document.getElementById("cta-message").textContent =
-      "Thanks! We’ll be in touch soon.";
-    document.getElementById("client_email").value = "";
-
-    // Here you could also add logic to send the email to your backend or a service like Formspree
-  } else {
-    document.getElementById("cta-message").textContent =
-      "Please enter a valid email address.";
-  }
-});
+  fetch(form.action, {
+    method: "POST",
+    body: new FormData(form),
+    headers: {
+      Accept: "application/json",
+    },
+  })
+    .then((response) => {
+      if (response.ok) {
+        messageContainer.textContent = "Thanks! We'll be in touch soon.";
+        form.reset();
+      } else {
+        messageContainer.textContent = "Oops! Something went wrong. Please try again.";
+      }
+    })
+    .catch(() => {
+      messageContainer.textContent = "Network error. Please try again later.";
+    });
+}
