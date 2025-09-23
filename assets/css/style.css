@@ -1,78 +1,67 @@
-/* General */
+/* ========== Global Styles ========== */
 body {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: #333;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
+  background-color: #f9f9f9;
 }
 
-/* Header / Navigation */
-#home {
-  background-color: #7600bc;
-  padding: 2cm 1cm 1cm;
-  margin: -1cm;
-  text-align: center;
-}
-
-.contact_info {
-  float: right;
-  color: rgb(40, 25, 246);
-  font-size: 15px;
-  text-align: left;
-}
-
-.profile_name {
-  float: left;
-  color: white;
-  font-size: 15px;
-  padding: 0 40px;
-}
-
-.topdiv {
-  margin: 0 auto;
-  padding: 1cm 0;
-  background-color: #a9a9a9;
-}
-
-.topmenu {
-  padding: 0 2cm;
-  text-decoration: none;
-  color: white;
-  transition: all 0.3s ease;
-}
-
-.topmenu:hover {
-  color: #000;
-  background-color: #c5b1b1;
-}
-
-/* Hero / About Me Section */
-.container {
-  padding: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  text-align: center;
-}
-
-.animated-image img,
-.profile_image {
-  width: 300px;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 50%;
-  animation: slideInFromLeft 1s ease-out;
-}
-
-h1, h2, h3, h4 {
-  color: #6d0b32;
+h1, h2, h3, h4, h5 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #0d6efd;
 }
 
 p {
-  color: #303030;
+  margin-bottom: 1rem;
+  color: #555;
 }
 
+/* ========== Header & Navigation ========== */
+header {
+  background: #0d6efd;
+  color: white;
+  padding: 1rem 0;
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.topmenu {
+  margin: 0 10px;
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.topmenu:hover {
+  text-decoration: underline;
+  color: #ffc107;
+}
+
+/* ========== Hero / Profile Image ========== */
+.profile_image {
+  border-radius: 50%;
+  max-width: 90px;
+  height: 90px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  animation: slideInFromLeft 1s ease-out;
+}
+
+/* ========== Section Spacing ========== */
+section {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+/* ========== Skills ========== */
 /* Skills Section */
 #skills {
   padding-top: 20px;
@@ -103,12 +92,14 @@ p {
   height: 100px;
 }
 
-/* Projects Section */
+/* ========== Projects ========== */
 .projects {
   text-align: center;
   padding: 20px;
 }
-
+.project-card, h3{
+  color: #0d6efd;
+}
 .projects-container {
   display: flex;
   flex-wrap: wrap;
@@ -116,11 +107,12 @@ p {
 }
 
 .project-card {
+  color: #0d6efd;
   width: 300px;
   margin: 10px;
   padding: 10px;
   text-align: center;
-  border: 1px solid #ddd;
+  border: 1px solid #160dbb;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s, box-shadow 0.3s;
@@ -142,17 +134,34 @@ p {
 }
 
 .project-card h3 {
-  color: white;
+  color: rgb(22, 18, 238);
+}
+
+
+/* ========== Blog ========== */
+.blog-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+
+.blog-image {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
 }
 
 /* Recommendations Section */
 #recommendations {
   padding: 20px;
+  text-align: center;
 }
 
 h5 {
-  text-align: left;
-  color: red;
+  text-align: center;
+  color: #3300ff;
 }
 
 .all_recommendations {
@@ -166,10 +175,10 @@ h5 {
   width: 300px;
   margin: 10px;
   padding: 10px;
-  border: 1px solid #ddd;
+  border: 1px solid #3616e8;
   border-radius: 5px;
   background-color: #f8f8f8;
-  text-align: left;
+  text-align: center;
 }
 
 /* Contact Form */
@@ -235,52 +244,40 @@ button:hover {
   color: white;
 }
 
-/* Footer */
-.iconbutton {
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-}
 
-footer p {
-  text-align: center;
-  padding: 10px;
-  font-size: 14px;
-  background-color: blueviolet;
-  color: white;
-  margin: 0;
-}
-a{
-  text-decoration: none;
-  color: white;
-  padding: 0 15px;
-}
-
-
-
-/* Animations */
-@keyframes slideInFromLeft {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-/* CTA Section */
+/* ========== CTA Section ========== */
 .cta-section {
+  background: #0d6efd;
+  color: white;
   text-align: center;
-  padding: 40px 20px;
-  background-color: blueviolet;;
+  padding: 1px solid #ccc;
+  border-radius: 25px;
+}
+
+.cta-section button {
+  padding: 0.6rem 1.2rem;
+  margin-left: 10px;
+  border: none;
+  border-radius: 6px;
+  background: #ffa500; /* Orange */
   color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cta-section button:hover {
+  background: #ff8400;
 }
 
 .cta-section h2 {
-  font-size: 2em;
-  margin-bottom: 10px;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.cta-message.mt-2.text-success {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #fff;
 }
 
 .cta-section p {
@@ -299,28 +296,166 @@ a{
   padding: 10px;
   font-size: 16px;
   border: none;
-  border-radius: 4px;
-  width: 300px;
+  border-radius: 6px;
+  width: 280px;
   max-width: 100%;
 }
 
 #cta-form button {
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #ffa500;
+  background-color: #ffc107;
   border: none;
-  border-radius: 4px;
-  color: white;
+  border-radius: 6px;
+  color:white;
+  font-weight: 600;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 #cta-form button:hover {
-  background-color: #ff8400;
+  background-color: #e0a800;
 }
 
 .cta-message {
   margin-top: 15px;
-  color: #90ee90;
   font-weight: bold;
+}
+
+/* ========== Popup (Recommendations) ========== */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  z-index: 1000;
+  max-width: 400px;
+  text-align: center;
+}
+
+.popup img {
+  margin-bottom: 1rem;
+}
+
+.popup h3 {
+  color: #333;
+}
+
+/* ========== Footer ========== */
+footer {
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  background: #f1f1f1;
+}
+
+footer a {
+  color: #0d6efd;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ========== Animations ========== */
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* ========== Dark Mode Toggle Button ========== */
+.dark-toggle {
+  margin-left: 15px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  background: #fff;
+  color: #0d6efd;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dark-toggle:hover {
+  background: #e0e0e0;
+}
+
+/* ========== Dark Mode Styles ========== */
+body.dark-mode {
+  background-color: #181a1b;
+  color: #e0e0e0;
+}
+body.dark-mode .cta-section {
+  background: #222;
+  color: #fff;
+}
+
+body.dark-mode .cta-section input {
+  background: #333;
+  color: #fff;
+  border: 1px solid #555;
+}
+
+body.dark-mode header {
+  background: #121416;
+}
+
+body.dark-mode .cta-section button {
+  background: #0d6efd; /* Blue button in dark mode */
+  color: #fff;
+}
+
+body.dark-mode .cta-section button:hover {
+  background: #0a58ca; /* Slightly darker blue */
+}
+
+body.dark-mode .topmenu {
+  color: #ddd;
+}
+
+body.dark-mode .topmenu:hover {
+  color: #ffc107;
+}
+
+body.dark-mode section {
+  background: #1f2123;
+  color: #eee;
+}
+
+body.dark-mode .skill,
+body.dark-mode .project-card,
+body.dark-mode .recommendation,
+body.dark-mode .blog-card,
+body.dark-mode .popup {
+  background: #242526;
+  color: #ddd;
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .cta-section {
+  background: #333;
+  color: #fff;
+}
+
+body.dark-mode footer {
+  background: #121416;
+  color: #aaa;
+}
+
+body.dark-mode footer a {
+  color: #ffc107;
 }

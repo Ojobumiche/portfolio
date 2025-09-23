@@ -11,7 +11,8 @@
     <script src="./assets/js/script.js" defer></script>
   </head>
   <body>
-    <!-- Header / Navigation -->
+   <!-- Header / Navigation -->
+  </script>
     <header id="home">
       <div class="container">
         <div class="profile_name">
@@ -35,7 +36,6 @@
         </nav>
       </div>
     </header>
-
     <!-- Hero Section -->
     <section class="container">
       <div class="animated-image">
@@ -45,6 +45,9 @@
           class="profile_image"
         />
         <h1>Hi, I'm Joshua Monday</h1>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4860729645190145"
+          crossorigin="anonymous">
+     </script>
         <p>A passionate Full Stack Developer building modern applications</p>
       </div>
     </section>
@@ -58,6 +61,8 @@
         <h1>
           About Me <img src="image/waving-hand.png" alt="Hello" width="40" />
         </h1>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4860729645190145"
+     crossorigin="anonymous"></script>
         <p>
           I'm a Full Stack Developer with 2 years of experience in building web applications and microservices. I've worked with IBM Cloud, Watson AI services including Assistant, NLU, and Sentiment Analyzer. I'm always seeking to learn and push boundaries.
         </p>
@@ -67,6 +72,8 @@
     <!-- Skills Section -->
     <section id="skills">
       <h2>Skills</h2>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4860729645190145"
+     crossorigin="anonymous"></script>
       <p>Here are the technologies I work with:</p>
       <div class="all_skills">
         <div class="skill"><img src="image/html5.png" /><h6>HTML</h6><p>3 years</p></div>
@@ -116,6 +123,8 @@
           <h1>Understanding Java in a simple way</h1>
           <img src="image/java.jpg" alt="Java" class="blog-image" />
            <h1>What is Java?</h1>
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4860729645190145"
+     crossorigin="anonymous"></script>
             <p> Java is a versatile and powerful programming language created in 1995 by James Gosling 
               at Sun Microsystems, now owned by Oracle. Renowned for its "Write Once, Run Anywhere" (WORA) capability, 
               Java programs can run on any device equipped with a Java Virtual Machine (JVM), including Windows, 
@@ -141,47 +150,45 @@
         </div>
       </div>
     </section>
+  <!-- Contact Form -->
+  <section id="contact" class="container text-center">
+    <h2>Leave a Recommendation</h2>
+    <form>
+      <input type="text" class="form-control mb-2" placeholder="Name (Optional)" />
+      <textarea id="new_recommendation" class="form-control mb-2" placeholder="Message"></textarea>
+      <button id="recommend_btn" type="button" class="btn btn-primary">Submit</button>
+    </form>
+  </section>
 
-    <!-- Contact Form -->
-    <section id="contact">
-      <div class="flex_center">
-        <fieldset>
-          <legend class="introduction">Leave a Recommendation</legend>
-          <input type="text" placeholder="Name (Optional)" />
-          <textarea id="new_recommendation" placeholder="Message"></textarea>
-          <button id="recommend_btn" onclick="addRecommendation()">Submit</button>
-        </fieldset>
-      </div>
-    </section>
+  <!-- Call to Action -->
+  <section id="cta" class="cta-section container my-5">
+    <h2>Let's Work Together</h2>
+    <p id="cta-message" class="cta-message mt-2 text-success">Interested in building something amazing? Drop your email and let’s talk!</p>
+    <form id="cta-form" class="d-flex justify-content-center">
+      <input type="email" name="email" placeholder="Your Email Address" required />
+      <button type="submit">Get in Touch</button>
+    </form>
+  </section>
 
-    <!-- Popup Confirmation -->
-    <div class="popup" id="popup">
-      <img src="image/checkmark--outline.svg" alt="Success" />
-      <h3>Thank you for your recommendation!</h3>
-      <button onclick="showPopup(false)">OK</button>
+  <!-- Footer -->
+  <footer>
+    <div>
+      <a href="#home"><img src="image/logo3.png" alt="Home" width="40" /></a>
     </div>
+    <p class="mb-0">&copy; 2024 Joshua Monday. <a href="./assets/privacy/privacy.html">Privacy Policy</a> | All rights reserved.</p>
+  </footer>
 
-          <!-- Call to Action Section -->
-<section id="cta" class="cta-section">
-  <h2>Let's Work Together</h2>
-  <p>Interested in building something amazing? Drop your email and let’s talk!</p>
-  <form id="cta-form" action="https://formspree.io/accounta" method="POST">
-    <input type="email" name="email" placeholder="Your Email Address" required />
-    <button type="submit">Get in Touch</button>
-  </form>
-  <p id="cta-message" class="cta-message"></p>
-</section>
+  <!-- EmailJS SDK -->
+   <script src="https://cdn.emailjs.com/sdk/3.2/email.min.js"></script>
+<script>
+  (function() {
+    emailjs.init("mtN1c1l941MyAxkwG"); // 👈 paste your actual Public Key here
+  })();
+</script>
+<script src="./assets/js/script.js" defer></script>
 
-    <!-- Footer -->
-    <footer>
-      <div class="iconbutton">
-        <a href="#home">
-          <img src="image/logo3.png" alt="Home" style="width: 50px; height: 50px" />
-        </a>
-      </div>
-      <p class="copyright">&copy; 2024 Joshua Monday.<a href="./assets/privacy/privacy.html">Privacy Policy</a></p> All rights reserved.</p>
-    </footer>
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
- 
-  </body>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>

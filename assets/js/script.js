@@ -52,28 +52,50 @@ function isElementInViewport(el) {
   );
 }
 
+// ✅ Updated to use EmailJS
 function handleFormSubmit(event) {
   event.preventDefault();
   const form = event.target;
-  const emailInput = form.querySelector("input[type='email']");
   const messageContainer = document.getElementById("cta-message");
 
-  fetch(form.action, {
-    method: "POST",
-    body: new FormData(form),
-    headers: {
-      Accept: "application/json",
-    },
-  })
-    .then((response) => {
-      if (response.ok) {
-        messageContainer.textContent = "Thanks! We'll be in touch soon.";
-        form.reset();
-      } else {
-        messageContainer.textContent = "Oops! Something went wrong. Please try again.";
-      }
+  const SERVICE_ID = "m1rh1jm"; // Replace with your EmailJS Service ID
+  const TEMPLATE_ID = "template_zipsupq";
+
+  emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form)
+    .then(() => {
+      messageContainer.textContent = "✅ Thanks! We'll be in touch soon.";
+      messageContainer.classList.remove("text-danger");
+      messageContainer.classList.add("text-success");
+      form.reset();
     })
-    .catch(() => {
-      messageContainer.textContent = "Network error. Please try again later.";
+    .catch((error) => {
+      console.error("EmailJS Error:", error);
+      messageContainer.textContent = "❌ Oops! Something went wrong. Please try again.";
+      messageContainer.classList.remove("text-success");
+      messageContainer.classList.add("text-danger");
     });
 }
+
+// Dark Mode Toggle
+const toggleButton = document.getElementById("darkModeToggle");
+
+toggleButton.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+
+  // Save preference in local storage
+  if (document.body.classList.contains("dark-mode")) {
+    toggleButton.textContent = "☀️ Light Mode";
+    localStorage.setItem("theme", "dark");
+  } else {
+    toggleButton.textContent = "🌙 Dark Mode";
+    localStorage.setItem("theme", "light");
+  }
+});
+
+// Load saved theme on page load
+window.addEventListener("DOMContentLoaded", () => {
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+    toggleButton.textContent = "☀️ Light Mode";
+  }
+});
