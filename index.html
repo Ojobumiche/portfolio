@@ -11,8 +11,7 @@
     <script src="./assets/js/script.js" defer></script>
   </head>
   <body>
-   <!-- Header / Navigation -->
-  </script>
+    <!-- Header / Navigation -->
     <header id="home">
       <div class="container">
         <div class="profile_name">
@@ -91,6 +90,8 @@
       <div class="projects-container">
         <div class="project-card">
           <h3>Unit Converter</h3>
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4860729645190145"
+     crossorigin="anonymous"></script>
           <img src="image/device2.png" alt="Unit Converter" class="project-image" />
           <a href="https://github.com/Ojobumiche/project.git" target="_blank">View Project</a>
           <p>A web app to convert metric units to imperial units using HTML, CSS, JS.</p>
@@ -160,15 +161,23 @@
     </form>
   </section>
 
-  <!-- Call to Action -->
-  <section id="cta" class="cta-section container my-5">
-    <h2>Let's Work Together</h2>
-    <p id="cta-message" class="cta-message mt-2 text-success">Interested in building something amazing? Drop your email and let’s talk!</p>
-    <form id="cta-form" class="d-flex justify-content-center">
-      <input type="email" name="email" placeholder="Your Email Address" required />
-      <button type="submit">Get in Touch</button>
-    </form>
-  </section>
+    <!-- Popup Confirmation -->
+    <div class="popup" id="popup">
+      <img src="image/checkmark--outline.svg" alt="Success" />
+      <h3>Thank you for your recommendation!</h3>
+      <button onclick="showPopup(false)">OK</button>
+    </div>
+
+          <!-- Call to Action Section -->
+<section id="cta" class="cta-section">
+  <h2>Let's Work Together</h2>
+  <p>Interested in building something amazing? Drop your email and let’s talk!</p>
+  <form id="cta-form" action="https://formspree.io/accounta" method="POST">
+    <input type="email" name="email" placeholder="Your Email Address" required />
+    <button type="submit">Get in Touch</button>
+  </form>
+  <p id="cta-message" class="cta-message"></p>
+</section>
 
   <!-- Footer -->
   <footer>
